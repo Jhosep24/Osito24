@@ -5,7 +5,7 @@
     const centerY = window.innerHeight / 2;
 
     // Posiciones para cada letra (espaciadas)
-    const spacing = 70;
+    const spacing = 50;
     const baseX = centerX - spacing * 2;
 
     // Iniciar posición inicial del osito (fuera de pantalla)
