@@ -1,0 +1,120 @@
+
+    /* Fondo romántico */
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(to top, #ff9a9e, #fad0c4);
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Osito animado */
+    .bear {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      z-index: 2;
+      pointer-events: none;
+      transition: all 1s ease-in-out;
+    }
+
+    /* Letras con efecto de latido y brillo */
+    .letter {
+      position: absolute;
+      font-size: 4em;
+      color: white;
+      text-shadow:
+        0 0 5px #fff,
+        0 0 10px #ff6ec4,
+        0 0 20px #ff1493;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.8s ease;
+      z-index: 1;
+      top: 50%;
+    }
+
+    .letter.show {
+      animation: pulse 1.5s infinite ease-in-out;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        text-shadow:
+          0 0 5px #fff,
+          0 0 10px #ff6ec4,
+          0 0 20px #ff1493;
+      }
+      50% {
+        transform: scale(1.15);
+        text-shadow:
+          0 0 10px #fff,
+          0 0 20px #ff6ec4,
+          0 0 30px #ff1493;
+      }
+    }
+
+    /* Mensaje final dentro del corazón (emoji) */
+    .final-message {
+      position: absolute;
+      top: 30%;
+      font-size: 2.5em;
+      color: white;
+      text-align: center;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 1s ease;
+      z-index: 3;
+      white-space: pre;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493;
+    }
+
+    .final-message.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Cohete */
+    .rocket {
+      position: absolute;
+      width: 10px;
+      height: 30px;
+      background: red;
+      border-radius: 5px;
+      transform-origin: bottom center;
+      z-index: 10;
+      opacity: 0;
+    }
+
+    /* Partículas de explosión */
+    .particle {
+      position: absolute;
+      font-size: 1.5em;
+      user-select: none;
+      pointer-events: none;
+      will-change: transform, opacity;
+    }
+
+    /* Luces brillantes */
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 105, 180, 0.5);
+      opacity: 0;
+      animation: sparkleAnim 3s infinite ease-in-out;
+    }
+
+    @keyframes sparkleAnim {
+      0%, 100% { opacity: 0; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
